@@ -1,0 +1,27 @@
+name: Workflow Variable
+
+on:
+ push:
+   branches:
+    - main
+
+ pull_request:
+    branches:
+      - main
+
+ workflow_dispatch:
+
+env:
+  cloud: AWS Cloud #job variable
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    env:
+      Greet: Hello #inside job variable
+    
+    steps:
+      - name: Greeting sentence
+        run: echo "$Greet $Name, You are using $cloud"
+        env:
+          Name: Sourabh
