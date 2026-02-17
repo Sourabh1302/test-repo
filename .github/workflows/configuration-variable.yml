@@ -1,0 +1,26 @@
+name: Configuration Variable
+
+on:
+ push:
+    branches:
+      - master
+      - main
+ pull_request:
+    branches:
+      - master
+      - main
+
+ workflow_dispatch:
+
+env:
+  Cloud: AWS
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    env:
+      Name: Sourabh
+
+    steps:
+      - name: Say Hello
+        run: echo "Hello $Name, You are using $Cloud with {{ vars.PROJECT_ID }}"

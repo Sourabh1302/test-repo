@@ -24,4 +24,4 @@ jobs:
       - name: Greeting sentence
         run: echo "$Greet $Name, You are using $cloud"
         env:
-          Name: Sourabh
+          Name: Sourabh #step variable
