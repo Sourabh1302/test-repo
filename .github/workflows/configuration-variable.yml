@@ -23,4 +23,4 @@ jobs:
 
     steps:
       - name: Say Hello
-        run: echo "Hello $Name, You are using $Cloud with {{ vars.PROJECT_ID }}"
+        run: echo "Hello $Name, You are using $Cloud with ${{ vars.PROJECT_ID }}"
