@@ -1,0 +1,17 @@
+name: Text Context Variable
+
+on:
+ push:
+   branches:
+     - main
+ workflow_dispatch:
+
+jobs:
+  my_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Text Context
+      run: |
+        echo "Repository Name : ${{ github.repository }}"
+        echo "Workflow Name: ${{ github.workflow }}"
+        echo "Triggered by: ${{ github.triggering_actor }}"
